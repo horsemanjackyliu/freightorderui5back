@@ -1,0 +1,1245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="SAP__common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="SAP__measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CORE',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Core.V1" Alias="SAP__core"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="SAP__capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="SAP__aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="SAP__validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="SAP__UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HTML5',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.HTML5.v1" Alias="SAP__HTML5"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PDF',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PDF.v1" Alias="SAP__PDF"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_SESSION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Session.v1" Alias="SAP__session"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ODM',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.ODM.v1" Alias="SAP__ODM"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HIERARCHY',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Hierarchy.v1" Alias="SAP__hierarchy"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="com.sap.gateway.srvd.zfreightorder_service.v0001" Alias="SAP__self">
+            <Annotation Term="SAP__core.SchemaVersion" String="1.0.0"/>
+            <EntityType Name="ZC_FORDER_ITEMSType">
+                <Key>
+                    <PropertyRef Name="TransportationOrderItem"/>
+                </Key>
+                <Property Name="TransportationOrderItem" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="TranspOrdItem" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="TranspOrdItemType" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="TranspOrdItemCategory" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="TranspOrdItemDesc" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="SourceStopUuid" Type="Edm.Guid"/>
+                <Property Name="DestinationStopUuid" Type="Edm.Guid"/>
+                <Property Name="ShipperUuid" Type="Edm.Guid"/>
+                <Property Name="Shipper" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="ShipperAddressId" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="ConsigneeUuid" Type="Edm.Guid"/>
+                <Property Name="Consignee" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="ConsigneeAddressId" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="TranspBaseDocument" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="TranspBaseDocumentType" Type="Edm.String" Nullable="false" MaxLength="5"/>
+                <Property Name="TranspBaseDocumentItem" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="TransportationEquipmentG" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="TransportationEquipmentT" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="TranspEquipmentPlateNum" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="TranspEquipRegistration" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="TranspOrdItemPackageId" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="ProductId" Type="Edm.String" Nullable="false" MaxLength="18"/>
+                <Property Name="MaterialFreightGroup" Type="Edm.String" Nullable="false" MaxLength="8"/>
+                <Property Name="TransportationGroup" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="TranspOrdItemQuantity" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3"/>
+                <Property Name="TranspOrdItemQuantityU" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="TranspOrdItemGrossWeig" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3"/>
+                <Property Name="TranspOrdItemGrossWe2" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="TranspOrdItemGrossVolu" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3"/>
+                <Property Name="TranspOrdItemGrossVo2" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="TranspOrdItemNetWeight" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3"/>
+                <Property Name="TranspOrdItemNetWeig2" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="TranspOrdItemDngrsGds" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="Repositoryid" Type="Edm.String" Nullable="false" MaxLength="100"/>
+                <Property Name="Fileobjectid" Type="Edm.String" Nullable="false"/>
+                <Property Name="__EntityControl" Type="com.sap.gateway.srvd.zfreightorder_service.v0001.EntityControl"/>
+                <Property Name="__OperationControl" Type="com.sap.gateway.srvd.zfreightorder_service.v0001.ZC_FORDER_ITEMSOperationControl"/>
+                <Property Name="SAP__Messages" Type="Collection(com.sap.gateway.srvd.zfreightorder_service.v0001.SAP__Message)" Nullable="false"/>
+                <NavigationProperty Name="_FREIGHTORDER" Type="com.sap.gateway.srvd.zfreightorder_service.v0001.ZC_FREIGHTORDERType" Nullable="false" Partner="_ITEMS"/>
+            </EntityType>
+            <EntityType Name="ZC_FREIGHTORDERType">
+                <Key>
+                    <PropertyRef Name="Transportationorderuuid"/>
+                </Key>
+                <Property Name="Transportationorderuuid" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="Transportationorder" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="CarrierUuid" Type="Edm.Guid"/>
+                <Property Name="Carrier" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="ShipperUuid" Type="Edm.Guid"/>
+                <Property Name="Shipper" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="ShipperAddressId" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="ConsigneeUuid" Type="Edm.Guid"/>
+                <Property Name="Consignee" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="ConsigneeAddressId" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="TranspPurgOrg" Type="Edm.String" Nullable="false" MaxLength="8"/>
+                <Property Name="TranspPurgGroup" Type="Edm.String" Nullable="false" MaxLength="8"/>
+                <Property Name="PurgOrgCompanyCode" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="CarrierAccountNumber" Type="Edm.String" Nullable="false" MaxLength="14"/>
+                <Property Name="TranspOrdInvoicingCarri" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="CreatedByUser" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="Transportationmode" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="Transportationordertype" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="Transportationshippingtype" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="Transppurgorgextid" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="TransportationModeCatego" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="TranspOrdExecutionIsBl" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="TransportationOrderExec" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="Repositoryid" Type="Edm.String" Nullable="false" MaxLength="100"/>
+                <Property Name="Fileobjectid" Type="Edm.String" Nullable="false"/>
+                <Property Name="__CreateByAssociationControl" Type="com.sap.gateway.srvd.zfreightorder_service.v0001.ZC_FREIGHTORDERCbAControl"/>
+                <Property Name="__EntityControl" Type="com.sap.gateway.srvd.zfreightorder_service.v0001.EntityControl"/>
+                <Property Name="__OperationControl" Type="com.sap.gateway.srvd.zfreightorder_service.v0001.ZC_FREIGHTORDEROperationControl"/>
+                <Property Name="SAP__Messages" Type="Collection(com.sap.gateway.srvd.zfreightorder_service.v0001.SAP__Message)" Nullable="false"/>
+                <NavigationProperty Name="_ITEMS" Type="Collection(com.sap.gateway.srvd.zfreightorder_service.v0001.ZC_FORDER_ITEMSType)" Partner="_FREIGHTORDER">
+                    <OnDelete Action="Cascade"/>
+                </NavigationProperty>
+            </EntityType>
+            <ComplexType Name="ZC_FREIGHTORDERCbAControl">
+                <Property Name="_ITEMS" Type="Edm.Boolean" Nullable="false"/>
+            </ComplexType>
+            <ComplexType Name="ZC_FORDER_ITEMSOperationControl">
+                <Property Name="uploadfile" Type="Edm.Boolean" Nullable="false"/>
+            </ComplexType>
+            <ComplexType Name="ZC_FREIGHTORDEROperationControl">
+                <Property Name="uploadfile" Type="Edm.Boolean" Nullable="false"/>
+            </ComplexType>
+            <ComplexType Name="CMIS_S_CONTENT_RAW">
+                <Property Name="FILENAME" Type="Edm.String" Nullable="false"/>
+                <Property Name="MIME_TYPE" Type="Edm.String" Nullable="false"/>
+                <Property Name="LENGTH" Type="Edm.Decimal" Nullable="false" Precision="16"/>
+                <Property Name="STREAM" Type="Edm.Binary" Nullable="false"/>
+            </ComplexType>
+            <ComplexType Name="EntityControl">
+                <Property Name="Updatable" Type="Edm.Boolean" Nullable="false"/>
+            </ComplexType>
+            <ComplexType Name="SAP__Message">
+                <Property Name="code" Type="Edm.String" Nullable="false"/>
+                <Property Name="message" Type="Edm.String" Nullable="false"/>
+                <Property Name="target" Type="Edm.String"/>
+                <Property Name="additionalTargets" Type="Collection(Edm.String)" Nullable="false"/>
+                <Property Name="transition" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="numericSeverity" Type="Edm.Byte" Nullable="false"/>
+                <Property Name="longtextUrl" Type="Edm.String"/>
+            </ComplexType>
+            <Action Name="uploadfile" EntitySetPath="_it" IsBound="true">
+                <Parameter Name="_it" Type="com.sap.gateway.srvd.zfreightorder_service.v0001.ZC_FREIGHTORDERType" Nullable="false"/>
+                <Parameter Name="filename" Type="Edm.String" Nullable="false"/>
+                <Parameter Name="mime_type" Type="Edm.String" Nullable="false"/>
+                <Parameter Name="stream" Type="Edm.Binary" Nullable="false"/>
+                <ReturnType Type="com.sap.gateway.srvd.zfreightorder_service.v0001.ZC_FREIGHTORDERType" Nullable="false"/>
+            </Action>
+            <Action Name="uploadfile" EntitySetPath="_it" IsBound="true">
+                <Parameter Name="_it" Type="com.sap.gateway.srvd.zfreightorder_service.v0001.ZC_FORDER_ITEMSType" Nullable="false"/>
+                <Parameter Name="attachment" Type="Edm.Binary" Nullable="false"/>
+                <Parameter Name="mimetype" Type="Edm.String" Nullable="false" MaxLength="128"/>
+                <Parameter Name="filename" Type="Edm.String" Nullable="false" MaxLength="128"/>
+                <ReturnType Type="com.sap.gateway.srvd.zfreightorder_service.v0001.ZC_FORDER_ITEMSType" Nullable="false"/>
+            </Action>
+            <Function Name="downloadfile" IsBound="true">
+                <Parameter Name="_it" Type="com.sap.gateway.srvd.zfreightorder_service.v0001.ZC_FREIGHTORDERType" Nullable="false"/>
+                <ReturnType Type="com.sap.gateway.srvd.zfreightorder_service.v0001.CMIS_S_CONTENT_RAW" Nullable="false"/>
+            </Function>
+            <Function Name="downloadfile" IsBound="true">
+                <Parameter Name="_it" Type="com.sap.gateway.srvd.zfreightorder_service.v0001.ZC_FORDER_ITEMSType" Nullable="false"/>
+                <ReturnType Type="com.sap.gateway.srvd.zfreightorder_service.v0001.CMIS_S_CONTENT_RAW" Nullable="false"/>
+            </Function>
+            <EntityContainer Name="Container">
+                <EntitySet Name="ZC_FORDER_ITEMS" EntityType="com.sap.gateway.srvd.zfreightorder_service.v0001.ZC_FORDER_ITEMSType">
+                    <NavigationPropertyBinding Path="_FREIGHTORDER" Target="ZC_FREIGHTORDER"/>
+                </EntitySet>
+                <EntitySet Name="ZC_FREIGHTORDER" EntityType="com.sap.gateway.srvd.zfreightorder_service.v0001.ZC_FREIGHTORDERType">
+                    <NavigationPropertyBinding Path="_ITEMS" Target="ZC_FORDER_ITEMS"/>
+                </EntitySet>
+            </EntityContainer>
+            <Annotations Target="SAP__self.ZC_FORDER_ITEMSType/TranspOrdItemQuantity">
+                <Annotation Term="SAP__measures.Unit" Path="TranspOrdItemQuantityU"/>
+                <Annotation Term="SAP__common.Label" String="Quantity"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_FORDER_ITEMSType/TranspOrdItemQuantityU">
+                <Annotation Term="SAP__common.IsUnit"/>
+                <Annotation Term="SAP__common.Label" String="Base Unit of Measure"/>
+                <Annotation Term="SAP__common.Heading" String="BUn"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_FORDER_ITEMSType/TranspOrdItemGrossWeig">
+                <Annotation Term="SAP__measures.Unit" Path="TranspOrdItemGrossWe2"/>
+                <Annotation Term="SAP__common.Label" String="Quantity"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_FORDER_ITEMSType/TranspOrdItemGrossWe2">
+                <Annotation Term="SAP__common.IsUnit"/>
+                <Annotation Term="SAP__common.Label" String="Base Unit of Measure"/>
+                <Annotation Term="SAP__common.Heading" String="BUn"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_FORDER_ITEMSType/TranspOrdItemGrossVolu">
+                <Annotation Term="SAP__measures.Unit" Path="TranspOrdItemGrossVo2"/>
+                <Annotation Term="SAP__common.Label" String="Quantity"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_FORDER_ITEMSType/TranspOrdItemGrossVo2">
+                <Annotation Term="SAP__common.IsUnit"/>
+                <Annotation Term="SAP__common.Label" String="Base Unit of Measure"/>
+                <Annotation Term="SAP__common.Heading" String="BUn"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_FORDER_ITEMSType/TranspOrdItemNetWeight">
+                <Annotation Term="SAP__measures.Unit" Path="TranspOrdItemNetWeig2"/>
+                <Annotation Term="SAP__common.Label" String="Quantity"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_FORDER_ITEMSType/TranspOrdItemNetWeig2">
+                <Annotation Term="SAP__common.IsUnit"/>
+                <Annotation Term="SAP__common.Label" String="Base Unit of Measure"/>
+                <Annotation Term="SAP__common.Heading" String="BUn"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_FORDER_ITEMSType/__EntityControl">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_FORDER_ITEMSType/__OperationControl">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/ZC_FORDER_ITEMS">
+                <Annotation Term="SAP__capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="_FREIGHTORDER"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="true"/>
+                        <PropertyValue Property="UnsupportedExpressions" EnumMember="SAP__capabilities.SearchExpressions/AND SAP__capabilities.SearchExpressions/OR SAP__capabilities.SearchExpressions/NOT SAP__capabilities.SearchExpressions/group SAP__capabilities.SearchExpressions/phrase"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="Filterable" Bool="true"/>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Repositoryid"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Fileobjectid"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SearchExpression"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>__EntityControl</PropertyPath>
+                                <PropertyPath>__OperationControl</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>Repositoryid</PropertyPath>
+                                <PropertyPath>Fileobjectid</PropertyPath>
+                                <PropertyPath>__EntityControl</PropertyPath>
+                                <PropertyPath>__OperationControl</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Path="__EntityControl/Updatable"/>
+                        <PropertyValue Property="NonUpdatableNavigationProperties">
+                            <Collection>
+                                <PropertyPath>_FREIGHTORDER</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.uploadfile(SAP__self.ZC_FORDER_ITEMSType)">
+                <Annotation Term="SAP__core.OperationAvailable" Path="_it/__OperationControl/uploadfile"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_FORDER_ITEMSType">
+                <Annotation Term="SAP__common.Label" String="Projection view for ZR_FORDER_ITEMS"/>
+                <Annotation Term="SAP__common.SemanticKey">
+                    <Collection>
+                        <PropertyPath>TranspOrdItem</PropertyPath>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.Facets">
+                    <Collection>
+                        <Record Type="SAP__UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Freight Order Item"/>
+                            <PropertyValue Property="ID" String="TranspOrdItem"/>
+                            <PropertyValue Property="Target" AnnotationPath="@SAP__UI.Identification"/>
+                        </Record>
+                        <Record Type="SAP__UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Freight Order"/>
+                            <PropertyValue Property="ID" String="FreightOrder"/>
+                            <PropertyValue Property="Target" AnnotationPath="_FREIGHTORDER/@SAP__UI.LineItem"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="FreightOrderItem"/>
+                        <PropertyValue Property="TypeNamePlural" String="FreightOrderItem"/>
+                        <PropertyValue Property="Description">
+                            <Record Type="SAP__UI.DataField">
+                                <PropertyValue Property="Label" String="TranspOrdItem"/>
+                                <PropertyValue Property="Value" Path="TranspOrdItem"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.Identification">
+                    <Collection>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="TranspOrdItem"/>
+                            <PropertyValue Property="Value" Path="TranspOrdItem"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataFieldForAction">
+                            <PropertyValue Property="Label" String="UploadFile"/>
+                            <PropertyValue Property="Action" String="com.sap.gateway.srvd.zfreightorder_service.v0001.uploadfile(com.sap.gateway.srvd.zfreightorder_service.v0001.ZC_FORDER_ITEMSType)"/>
+                            <PropertyValue Property="InvocationGrouping" EnumMember="SAP__UI.OperationGroupingType/Isolated"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="TranspOrdItemType"/>
+                            <PropertyValue Property="Value" Path="TranspOrdItemType"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataFieldForAction">
+                            <PropertyValue Property="Label" String="downloadfile"/>
+                            <PropertyValue Property="Action" String="com.sap.gateway.srvd.zfreightorder_service.v0001.downloadfile(com.sap.gateway.srvd.zfreightorder_service.v0001.ZC_FORDER_ITEMSType)"/>
+                            <PropertyValue Property="InvocationGrouping" EnumMember="SAP__UI.OperationGroupingType/Isolated"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="TranspOrdItemCategory"/>
+                            <PropertyValue Property="Value" Path="TranspOrdItemCategory"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="TranspOrdItemDesc"/>
+                            <PropertyValue Property="Value" Path="TranspOrdItemDesc"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Shipper"/>
+                            <PropertyValue Property="Value" Path="Shipper"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="ShipperAddressId"/>
+                            <PropertyValue Property="Value" Path="ShipperAddressId"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Consignee"/>
+                            <PropertyValue Property="Value" Path="Consignee"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="ConsigneeAddressId"/>
+                            <PropertyValue Property="Value" Path="ConsigneeAddressId"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="TranspBaseDocument"/>
+                            <PropertyValue Property="Value" Path="TranspBaseDocument"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="TranspBaseDocumentType"/>
+                            <PropertyValue Property="Value" Path="TranspBaseDocumentType"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="TranspBaseDocumentItem"/>
+                            <PropertyValue Property="Value" Path="TranspBaseDocumentItem"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="TransportationEquipmentG"/>
+                            <PropertyValue Property="Value" Path="TransportationEquipmentG"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="EquipmentType"/>
+                            <PropertyValue Property="Value" Path="TransportationEquipmentT"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="PackageID"/>
+                            <PropertyValue Property="Value" Path="TranspOrdItemPackageId"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="PlateNumber"/>
+                            <PropertyValue Property="Value" Path="TranspEquipmentPlateNum"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="ProductId"/>
+                            <PropertyValue Property="Value" Path="ProductId"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="TranspEquipRegistration"/>
+                            <PropertyValue Property="Value" Path="TranspEquipRegistration"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="MaterialFreightGroup"/>
+                            <PropertyValue Property="Value" Path="MaterialFreightGroup"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="TransportationGroup"/>
+                            <PropertyValue Property="Value" Path="TransportationGroup"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="TranspOrdItemQuantity"/>
+                            <PropertyValue Property="Value" Path="TranspOrdItemQuantity"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="QuantityUnit"/>
+                            <PropertyValue Property="Value" Path="TranspOrdItemQuantityU"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="GrossWeight"/>
+                            <PropertyValue Property="Value" Path="TranspOrdItemGrossWeig"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="GrossWeightUnit"/>
+                            <PropertyValue Property="Value" Path="TranspOrdItemGrossWe2"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="GrossVolumn"/>
+                            <PropertyValue Property="Value" Path="TranspOrdItemGrossVolu"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="GrossVolumnUnit"/>
+                            <PropertyValue Property="Value" Path="TranspOrdItemGrossVo2"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="NetWeight"/>
+                            <PropertyValue Property="Value" Path="TranspOrdItemNetWeight"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="NetWeightUnit"/>
+                            <PropertyValue Property="Value" Path="TranspOrdItemNetWeig2"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="DangerousGoods"/>
+                            <PropertyValue Property="Value" Path="TranspOrdItemDngrsGds"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="SDMRepositoryid"/>
+                            <PropertyValue Property="Value" Path="Repositoryid"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="SDMFileobjectID"/>
+                            <PropertyValue Property="Value" Path="Fileobjectid"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="TranspOrdItem"/>
+                            <PropertyValue Property="Value" Path="TransportationOrderItem"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.LineItem">
+                    <Collection>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="TranspOrdItem"/>
+                            <PropertyValue Property="Value" Path="TranspOrdItem"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="TranspOrdItemType"/>
+                            <PropertyValue Property="Value" Path="TranspOrdItemType"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="TranspOrdItemCategory"/>
+                            <PropertyValue Property="Value" Path="TranspOrdItemCategory"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="TranspOrdItemDesc"/>
+                            <PropertyValue Property="Value" Path="TranspOrdItemDesc"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Shipper"/>
+                            <PropertyValue Property="Value" Path="Shipper"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="ShipperAddressId"/>
+                            <PropertyValue Property="Value" Path="ShipperAddressId"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Consignee"/>
+                            <PropertyValue Property="Value" Path="Consignee"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="ConsigneeAddressId"/>
+                            <PropertyValue Property="Value" Path="ConsigneeAddressId"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="TranspBaseDocument"/>
+                            <PropertyValue Property="Value" Path="TranspBaseDocument"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="TranspBaseDocumentType"/>
+                            <PropertyValue Property="Value" Path="TranspBaseDocumentType"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="TranspBaseDocumentItem"/>
+                            <PropertyValue Property="Value" Path="TranspBaseDocumentItem"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="TransportationEquipmentG"/>
+                            <PropertyValue Property="Value" Path="TransportationEquipmentG"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="EquipmentType"/>
+                            <PropertyValue Property="Value" Path="TransportationEquipmentT"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="PackageID"/>
+                            <PropertyValue Property="Value" Path="TranspOrdItemPackageId"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="PlateNumber"/>
+                            <PropertyValue Property="Value" Path="TranspEquipmentPlateNum"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="ProductId"/>
+                            <PropertyValue Property="Value" Path="ProductId"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="TranspEquipRegistration"/>
+                            <PropertyValue Property="Value" Path="TranspEquipRegistration"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="MaterialFreightGroup"/>
+                            <PropertyValue Property="Value" Path="MaterialFreightGroup"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="TransportationGroup"/>
+                            <PropertyValue Property="Value" Path="TransportationGroup"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="TranspOrdItemQuantity"/>
+                            <PropertyValue Property="Value" Path="TranspOrdItemQuantity"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="QuantityUnit"/>
+                            <PropertyValue Property="Value" Path="TranspOrdItemQuantityU"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="GrossWeight"/>
+                            <PropertyValue Property="Value" Path="TranspOrdItemGrossWeig"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="GrossWeightUnit"/>
+                            <PropertyValue Property="Value" Path="TranspOrdItemGrossWe2"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="GrossVolumn"/>
+                            <PropertyValue Property="Value" Path="TranspOrdItemGrossVolu"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="GrossVolumnUnit"/>
+                            <PropertyValue Property="Value" Path="TranspOrdItemGrossVo2"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="NetWeight"/>
+                            <PropertyValue Property="Value" Path="TranspOrdItemNetWeight"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="NetWeightUnit"/>
+                            <PropertyValue Property="Value" Path="TranspOrdItemNetWeig2"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="DangerousGoods"/>
+                            <PropertyValue Property="Value" Path="TranspOrdItemDngrsGds"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="SDMRepositoryid"/>
+                            <PropertyValue Property="Value" Path="Repositoryid"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="SDMFileobjectID"/>
+                            <PropertyValue Property="Value" Path="Fileobjectid"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="TranspOrdItem"/>
+                            <PropertyValue Property="Value" Path="TransportationOrderItem"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>TranspOrdItem</PropertyPath>
+                        <PropertyPath>TranspOrdItemType</PropertyPath>
+                        <PropertyPath>TranspOrdItemCategory</PropertyPath>
+                        <PropertyPath>Shipper</PropertyPath>
+                        <PropertyPath>ShipperAddressId</PropertyPath>
+                        <PropertyPath>Consignee</PropertyPath>
+                        <PropertyPath>ConsigneeAddressId</PropertyPath>
+                        <PropertyPath>TranspBaseDocument</PropertyPath>
+                        <PropertyPath>TranspBaseDocumentType</PropertyPath>
+                        <PropertyPath>ProductId</PropertyPath>
+                        <PropertyPath>MaterialFreightGroup</PropertyPath>
+                        <PropertyPath>TransportationGroup</PropertyPath>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Messages" Path="SAP__Messages"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container">
+                <Annotation Term="SAP__CodeList.UnitsOfMeasure">
+                    <Record>
+                        <PropertyValue Property="Url" String="../../../../default/iwbep/common/0001/$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="UnitsOfMeasure"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__aggregation.ApplySupported">
+                    <Record>
+                        <PropertyValue Property="Transformations">
+                            <Collection>
+                                <String>aggregate</String>
+                                <String>groupby</String>
+                                <String>filter</String>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Rollup" EnumMember="SAP__aggregation.RollupType/None"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+                <Annotation Term="SAP__capabilities.FilterFunctions">
+                    <Collection>
+                        <String>eq</String>
+                        <String>ne</String>
+                        <String>gt</String>
+                        <String>ge</String>
+                        <String>lt</String>
+                        <String>le</String>
+                        <String>and</String>
+                        <String>or</String>
+                        <String>contains</String>
+                        <String>startswith</String>
+                        <String>endswith</String>
+                        <String>any</String>
+                        <String>all</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SupportedFormats">
+                    <Collection>
+                        <String>application/json</String>
+                        <String>application/pdf</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__PDF.Features">
+                    <Record>
+                        <PropertyValue Property="DocumentDescriptionReference" String="../../../../default/iwbep/common/0001/$metadata"/>
+                        <PropertyValue Property="DocumentDescriptionCollection" String="MyDocumentDescriptions"/>
+                        <PropertyValue Property="ArchiveFormat" Bool="true"/>
+                        <PropertyValue Property="Border" Bool="true"/>
+                        <PropertyValue Property="CoverPage" Bool="true"/>
+                        <PropertyValue Property="FitToPage" Bool="true"/>
+                        <PropertyValue Property="FontName" Bool="true"/>
+                        <PropertyValue Property="FontSize" Bool="true"/>
+                        <PropertyValue Property="Margin" Bool="true"/>
+                        <PropertyValue Property="Padding" Bool="true"/>
+                        <PropertyValue Property="Signature" Bool="true"/>
+                        <PropertyValue Property="HeaderFooter" Bool="true"/>
+                        <PropertyValue Property="ResultSizeDefault" Int="20000"/>
+                        <PropertyValue Property="ResultSizeMaximum" Int="20000"/>
+                        <PropertyValue Property="IANATimezoneFormat" Bool="true"/>
+                        <PropertyValue Property="Treeview" Bool="true"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.KeyAsSegmentSupported"/>
+                <Annotation Term="SAP__capabilities.AsynchronousRequestsSupported"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_FREIGHTORDERType/__CreateByAssociationControl">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_FREIGHTORDERType/__EntityControl">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_FREIGHTORDERType/__OperationControl">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_FREIGHTORDERType/_ITEMS">
+                <Annotation Term="SAP__common.Composition"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/ZC_FREIGHTORDER">
+                <Annotation Term="SAP__capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="_ITEMS"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Path="__CreateByAssociationControl/_ITEMS"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="true"/>
+                        <PropertyValue Property="UnsupportedExpressions" EnumMember="SAP__capabilities.SearchExpressions/AND SAP__capabilities.SearchExpressions/OR SAP__capabilities.SearchExpressions/NOT SAP__capabilities.SearchExpressions/group SAP__capabilities.SearchExpressions/phrase"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="Filterable" Bool="true"/>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Repositoryid"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Fileobjectid"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SearchExpression"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>__CreateByAssociationControl</PropertyPath>
+                                <PropertyPath>__EntityControl</PropertyPath>
+                                <PropertyPath>__OperationControl</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>Repositoryid</PropertyPath>
+                                <PropertyPath>Fileobjectid</PropertyPath>
+                                <PropertyPath>__CreateByAssociationControl</PropertyPath>
+                                <PropertyPath>__EntityControl</PropertyPath>
+                                <PropertyPath>__OperationControl</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Path="__EntityControl/Updatable"/>
+                        <PropertyValue Property="NonUpdatableNavigationProperties">
+                            <Collection>
+                                <PropertyPath>_ITEMS</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.uploadfile(SAP__self.ZC_FREIGHTORDERType)">
+                <Annotation Term="SAP__core.OperationAvailable" Path="_it/__OperationControl/uploadfile"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_FREIGHTORDERType">
+                <Annotation Term="SAP__common.Label" String="ZC_FREIGHTORDER"/>
+                <Annotation Term="SAP__common.SemanticKey">
+                    <Collection>
+                        <PropertyPath>Transportationorderuuid</PropertyPath>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.Facets">
+                    <Collection>
+                        <Record Type="SAP__UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Freight Order Header"/>
+                            <PropertyValue Property="ID" String="idIdentification"/>
+                            <PropertyValue Property="Target" AnnotationPath="@SAP__UI.Identification"/>
+                        </Record>
+                        <Record Type="SAP__UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Freight Order Items"/>
+                            <PropertyValue Property="ID" String="FreightOrderItems"/>
+                            <PropertyValue Property="Target" AnnotationPath="_ITEMS/@SAP__UI.LineItem"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="FreightOrder"/>
+                        <PropertyValue Property="TypeNamePlural" String="FreightOrder"/>
+                        <PropertyValue Property="Description">
+                            <Record Type="SAP__UI.DataField">
+                                <PropertyValue Property="Label" String="Transportationorder"/>
+                                <PropertyValue Property="Value" Path="Transportationorder"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.Identification">
+                    <Collection>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="TransportationOrder"/>
+                            <PropertyValue Property="Value" Path="Transportationorder"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataFieldForAction">
+                            <PropertyValue Property="Label" String="UploadFile"/>
+                            <PropertyValue Property="Action" String="com.sap.gateway.srvd.zfreightorder_service.v0001.uploadfile(com.sap.gateway.srvd.zfreightorder_service.v0001.ZC_FREIGHTORDERType)"/>
+                            <PropertyValue Property="InvocationGrouping" EnumMember="SAP__UI.OperationGroupingType/Isolated"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Carrier"/>
+                            <PropertyValue Property="Value" Path="Carrier"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataFieldForAction">
+                            <PropertyValue Property="Label" String="downloadfile"/>
+                            <PropertyValue Property="Action" String="com.sap.gateway.srvd.zfreightorder_service.v0001.downloadfile(com.sap.gateway.srvd.zfreightorder_service.v0001.ZC_FREIGHTORDERType)"/>
+                            <PropertyValue Property="InvocationGrouping" EnumMember="SAP__UI.OperationGroupingType/Isolated"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Shipper"/>
+                            <PropertyValue Property="Value" Path="Shipper"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="ShipperAddressID"/>
+                            <PropertyValue Property="Value" Path="ShipperAddressId"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Consignee"/>
+                            <PropertyValue Property="Value" Path="Consignee"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="ConsigneeAddressId"/>
+                            <PropertyValue Property="Value" Path="ConsigneeAddressId"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="TranspPurgOrg"/>
+                            <PropertyValue Property="Value" Path="TranspPurgOrg"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="TranspPurgGroup"/>
+                            <PropertyValue Property="Value" Path="TranspPurgGroup"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="PurgOrgCompanyCode"/>
+                            <PropertyValue Property="Value" Path="PurgOrgCompanyCode"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="CarrierAccountNumber"/>
+                            <PropertyValue Property="Value" Path="CarrierAccountNumber"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="TranspOrdInvoicingCarri"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="CreatedByUser"/>
+                            <PropertyValue Property="Value" Path="CreatedByUser"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="TransportationMode"/>
+                            <PropertyValue Property="Value" Path="Transportationmode"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Transportationordertype"/>
+                            <PropertyValue Property="Value" Path="Transportationordertype"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Transportationshippingtype"/>
+                            <PropertyValue Property="Value" Path="Transportationshippingtype"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="TranspOrdExecutionIsBlocked"/>
+                            <PropertyValue Property="Value" Path="TranspOrdExecutionIsBl"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="TransportationOrderExec"/>
+                            <PropertyValue Property="Value" Path="TransportationOrderExec"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="SDMRepositoryid"/>
+                            <PropertyValue Property="Value" Path="Repositoryid"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="SDMFileobjectID"/>
+                            <PropertyValue Property="Value" Path="Fileobjectid"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.LineItem">
+                    <Collection>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="TransportationOrder"/>
+                            <PropertyValue Property="Value" Path="Transportationorder"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Carrier"/>
+                            <PropertyValue Property="Value" Path="Carrier"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Shipper"/>
+                            <PropertyValue Property="Value" Path="Shipper"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="ShipperAddressID"/>
+                            <PropertyValue Property="Value" Path="ShipperAddressId"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Consignee"/>
+                            <PropertyValue Property="Value" Path="Consignee"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="ConsigneeAddressId"/>
+                            <PropertyValue Property="Value" Path="ConsigneeAddressId"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="TranspPurgOrg"/>
+                            <PropertyValue Property="Value" Path="TranspPurgOrg"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="TranspPurgGroup"/>
+                            <PropertyValue Property="Value" Path="TranspPurgGroup"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="PurgOrgCompanyCode"/>
+                            <PropertyValue Property="Value" Path="PurgOrgCompanyCode"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="CarrierAccountNumber"/>
+                            <PropertyValue Property="Value" Path="CarrierAccountNumber"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="TranspOrdInvoicingCarri"/>
+                            <PropertyValue Property="Value" Path="TranspOrdInvoicingCarri"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="CreatedByUser"/>
+                            <PropertyValue Property="Value" Path="CreatedByUser"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="TransportationMode"/>
+                            <PropertyValue Property="Value" Path="Transportationmode"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Transportationordertype"/>
+                            <PropertyValue Property="Value" Path="Transportationordertype"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Transportationshippingtype"/>
+                            <PropertyValue Property="Value" Path="Transportationshippingtype"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="TranspOrdExecutionIsBl"/>
+                            <PropertyValue Property="Value" Path="TranspOrdExecutionIsBl"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="TransportationOrderExec"/>
+                            <PropertyValue Property="Value" Path="TransportationOrderExec"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="SDMRepositoryid"/>
+                            <PropertyValue Property="Value" Path="Repositoryid"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="SDMFileobjectID"/>
+                            <PropertyValue Property="Value" Path="Fileobjectid"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="TransportationOrderUUID"/>
+                            <PropertyValue Property="Value" Path="Transportationorderuuid"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/High"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>Transportationorder</PropertyPath>
+                        <PropertyPath>Carrier</PropertyPath>
+                        <PropertyPath>Shipper</PropertyPath>
+                        <PropertyPath>ShipperAddressId</PropertyPath>
+                        <PropertyPath>Consignee</PropertyPath>
+                        <PropertyPath>ConsigneeAddressId</PropertyPath>
+                        <PropertyPath>TranspPurgOrg</PropertyPath>
+                        <PropertyPath>TranspPurgGroup</PropertyPath>
+                        <PropertyPath>PurgOrgCompanyCode</PropertyPath>
+                        <PropertyPath>CarrierAccountNumber</PropertyPath>
+                        <PropertyPath>CreatedByUser</PropertyPath>
+                        <PropertyPath>Transportationmode</PropertyPath>
+                        <PropertyPath>Transportationordertype</PropertyPath>
+                        <PropertyPath>Transportationshippingtype</PropertyPath>
+                        <PropertyPath>TranspOrdExecutionIsBl</PropertyPath>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Messages" Path="SAP__Messages"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_FORDER_ITEMSType/SourceStopUuid">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="UUID"/>
+                <Annotation Term="SAP__common.QuickInfo" String="16 Byte UUID in 16 Bytes (Raw Format)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_FORDER_ITEMSType/DestinationStopUuid">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="UUID"/>
+                <Annotation Term="SAP__common.QuickInfo" String="16 Byte UUID in 16 Bytes (Raw Format)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_FORDER_ITEMSType/ShipperUuid">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="UUID"/>
+                <Annotation Term="SAP__common.QuickInfo" String="16 Byte UUID in 16 Bytes (Raw Format)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_FORDER_ITEMSType/ConsigneeUuid">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="UUID"/>
+                <Annotation Term="SAP__common.QuickInfo" String="16 Byte UUID in 16 Bytes (Raw Format)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_FREIGHTORDERType/CarrierUuid">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="UUID"/>
+                <Annotation Term="SAP__common.QuickInfo" String="16 Byte UUID in 16 Bytes (Raw Format)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_FREIGHTORDERType/ShipperUuid">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="UUID"/>
+                <Annotation Term="SAP__common.QuickInfo" String="16 Byte UUID in 16 Bytes (Raw Format)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_FREIGHTORDERType/ConsigneeUuid">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="UUID"/>
+                <Annotation Term="SAP__common.QuickInfo" String="16 Byte UUID in 16 Bytes (Raw Format)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_FREIGHTORDERType/Transppurgorgextid">
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_FREIGHTORDERType/TransportationModeCatego">
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_FORDER_ITEMSType/TransportationOrderItem">
+                <Annotation Term="SAP__common.Label" String="UUID"/>
+                <Annotation Term="SAP__common.QuickInfo" String="16 Byte UUID in 16 Bytes (Raw Format)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_FORDER_ITEMSType/Repositoryid">
+                <Annotation Term="SAP__common.Label" String="Repository ID"/>
+                <Annotation Term="SAP__common.QuickInfo" String="CMIS Repository ID"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_FORDER_ITEMSType/Fileobjectid">
+                <Annotation Term="SAP__common.Label" String="ID"/>
+                <Annotation Term="SAP__common.QuickInfo" String="CMIS ID"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_FORDER_ITEMSType/__EntityControl/Updatable">
+                <Annotation Term="SAP__common.Label" String="Dyn. Method Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Method Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Method Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_FORDER_ITEMSType/__OperationControl/uploadfile">
+                <Annotation Term="SAP__common.Label" String="Dyn. Action Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Action Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Action Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_FREIGHTORDERType/Transportationorderuuid">
+                <Annotation Term="SAP__common.Label" String="UUID"/>
+                <Annotation Term="SAP__common.QuickInfo" String="16 Byte UUID in 16 Bytes (Raw Format)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_FREIGHTORDERType/TranspOrdExecutionIsBl">
+                <Annotation Term="SAP__common.Label" String="Truth Value"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Truth Value: True/False"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_FREIGHTORDERType/Repositoryid">
+                <Annotation Term="SAP__common.Label" String="Repository ID"/>
+                <Annotation Term="SAP__common.QuickInfo" String="CMIS Repository ID"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_FREIGHTORDERType/Fileobjectid">
+                <Annotation Term="SAP__common.Label" String="ID"/>
+                <Annotation Term="SAP__common.QuickInfo" String="CMIS ID"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_FREIGHTORDERType/__CreateByAssociationControl/_ITEMS">
+                <Annotation Term="SAP__common.Label" String="Dynamic CbA-Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Create by Association Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Create via Association Control Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_FREIGHTORDERType/__EntityControl/Updatable">
+                <Annotation Term="SAP__common.Label" String="Dyn. Method Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Method Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Method Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_FREIGHTORDERType/__OperationControl/uploadfile">
+                <Annotation Term="SAP__common.Label" String="Dyn. Action Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Action Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Action Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_FREIGHTORDERCbAControl/_ITEMS">
+                <Annotation Term="SAP__common.Label" String="Dynamic CbA-Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Create by Association Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Create via Association Control Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_FORDER_ITEMSOperationControl/uploadfile">
+                <Annotation Term="SAP__common.Label" String="Dyn. Action Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Action Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Action Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_FREIGHTORDEROperationControl/uploadfile">
+                <Annotation Term="SAP__common.Label" String="Dyn. Action Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Action Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Action Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CMIS_S_CONTENT_RAW/FILENAME">
+                <Annotation Term="SAP__common.Label" String="String"/>
+                <Annotation Term="SAP__common.QuickInfo" String="CMIS String"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CMIS_S_CONTENT_RAW/MIME_TYPE">
+                <Annotation Term="SAP__common.Label" String="String"/>
+                <Annotation Term="SAP__common.QuickInfo" String="CMIS String"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CMIS_S_CONTENT_RAW/LENGTH">
+                <Annotation Term="SAP__common.Label" String="Long"/>
+                <Annotation Term="SAP__common.QuickInfo" String="CMIS Long"/>
+            </Annotations>
+            <Annotations Target="SAP__self.EntityControl/Updatable">
+                <Annotation Term="SAP__common.Label" String="Dyn. Method Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Method Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Method Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.uploadfile(SAP__self.ZC_FREIGHTORDERType)/filename">
+                <Annotation Term="SAP__common.Label" String="String"/>
+                <Annotation Term="SAP__common.QuickInfo" String="CMIS String"/>
+            </Annotations>
+            <Annotations Target="SAP__self.uploadfile(SAP__self.ZC_FREIGHTORDERType)/mime_type">
+                <Annotation Term="SAP__common.Label" String="String"/>
+                <Annotation Term="SAP__common.QuickInfo" String="CMIS String"/>
+            </Annotations>
+            <Annotations Target="SAP__self.uploadfile(SAP__self.ZC_FORDER_ITEMSType)/attachment">
+                <Annotation Term="SAP__common.Label" String="Attachment"/>
+            </Annotations>
+            <Annotations Target="SAP__self.uploadfile(SAP__self.ZC_FORDER_ITEMSType)/mimetype">
+                <Annotation Term="SAP__common.Label" String="Mime Type"/>
+                <Annotation Term="SAP__common.QuickInfo" String="MimeType"/>
+            </Annotations>
+            <Annotations Target="SAP__self.uploadfile(SAP__self.ZC_FORDER_ITEMSType)/filename">
+                <Annotation Term="SAP__common.Label" String="Filename"/>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

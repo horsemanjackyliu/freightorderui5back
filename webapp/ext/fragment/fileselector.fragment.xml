@@ -1,0 +1,18 @@
+<core:FragmentDefinition  xmlns="sap.m" xmlns:l="sap.ui.layout"  xmlns:core="sap.ui.core" xmlns:u="sap.ui.unified" xmlns:upload="sap.m.upload" >
+	<Dialog id="uploadDialogSet" title="File Upload">
+        <content>
+            <upload:UploadSet uploadEnabled="true" id="uploadSet" items="{path: '/', templateShareable: false}" fileTypes="png,pdf,txt" maxFileNameLength="200" beforeUploadStarts=".extension.freightordermgt.ext.controller.FoController.onBeforeUploadStart" uploadCompleted=".extension.freightordermgt.ext.controller.FoController.onUploadSetComplete" afterItemRemoved=".extension.freightordermgt.ext.controller.FoController.onItemRemoved"
+            terminationEnabled="true">
+                <upload:UploadSetItem id="_IDGenUploadSetItem1" visibleRemove="true" visibleEdit="false" fileName="{name}" url="/upload">
+                    <upload:attributes>
+                        <ObjectAttribute id="_IDGenObjectAttribute1" title="Uploaded by" text="{user}" active="false"/>
+                    </upload:attributes>
+                </upload:UploadSetItem>
+            </upload:UploadSet>
+        </content>
+        <buttons>        
+            <Button id="_IDGenButton1" text="Upload" press=".extension.freightordermgt.ext.controller.FoController.onUploadSet" icon="sap-icon://upload-to-cloud" type="Emphasized"/>
+            <Button id="cancel" press=".extension.freightordermgt.ext.controller.FoController.onCloseDialog" text="Cancel" icon="sap-icon://cancel"/>
+        </buttons>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,236 @@
+{
+  "_version": "1.59.0",
+  "sap.app": {
+    "id": "freightordermgt",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:lrop",
+      "version": "1.13.6",
+      "toolsId": "3de69ed0-74f3-411f-baac-d9cc4dc09dc9"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/sap/opu/odata4/sap/zfreightorder_srv_bind/srvd/sap/zfreightorder_service/0001/",
+        "type": "OData",
+        "settings": {
+          "annotations": [
+            "annotation"
+          ],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "4.0"
+        }
+      },
+      "annotation": {
+        "type": "ODataAnnotation",
+        "uri": "annotations/annotation.xml",
+        "settings": {
+          "localUri": "annotations/annotation.xml"
+        }
+      }
+    },
+    "crossNavigation": {
+      "inbounds": {
+        "FreightOrder-display": {
+          "semanticObject": "FreightOrder",
+          "action": "display",
+          "title": "{{flpTitle}}",
+          "subTitle": "{{flpSubtitle}}",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          }
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.120.8",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.ushell": {},
+        "sap.fe.templates": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "freightordermgt.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true
+        }
+      },
+      "@i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "uri": "i18n/i18n.properties"
+      }
+    },
+    "resources": {
+      "css": []
+    },
+    "routing": {
+      "config": {},
+      "routes": [
+        {
+          "pattern": ":?query:",
+          "name": "ZC_FREIGHTORDERList",
+          "target": "ZC_FREIGHTORDERList"
+        },
+        {
+          "pattern": "ZC_FREIGHTORDER({key}):?query:",
+          "name": "ZC_FREIGHTORDERObjectPage",
+          "target": "ZC_FREIGHTORDERObjectPage"
+        },
+        {
+          "pattern": "ZC_FREIGHTORDER({key})/_ITEMS({key2}):?query:",
+          "name": "ZC_FORDER_ITEMSObjectPage",
+          "target": "ZC_FORDER_ITEMSObjectPage"
+        }
+      ],
+      "targets": {
+        "ZC_FREIGHTORDERList": {
+          "type": "Component",
+          "id": "ZC_FREIGHTORDERList",
+          "name": "sap.fe.templates.ListReport",
+          "options": {
+            "settings": {
+              "contextPath": "/ZC_FREIGHTORDER",
+              "variantManagement": "Page",
+              "navigation": {
+                "ZC_FREIGHTORDER": {
+                  "detail": {
+                    "route": "ZC_FREIGHTORDERObjectPage"
+                  }
+                }
+              },
+              "controlConfiguration": {
+                "@com.sap.vocabularies.UI.v1.LineItem": {
+                  "tableSettings": {
+                    "type": "ResponsiveTable"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "ZC_FREIGHTORDERObjectPage": {
+          "type": "Component",
+          "id": "ZC_FREIGHTORDERObjectPage",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
+              "editableHeaderContent": false,
+              "contextPath": "/ZC_FREIGHTORDER",
+              "navigation": {
+                "_ITEMS": {
+                  "detail": {
+                    "route": "ZC_FORDER_ITEMSObjectPage"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "ZC_FORDER_ITEMSObjectPage": {
+          "type": "Component",
+          "id": "ZC_FORDER_ITEMSObjectPage",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
+              "editableHeaderContent": false,
+              "contextPath": "/ZC_FREIGHTORDER/_ITEMS",
+              "content": {
+                "header": {
+                  "actions": {
+                    "UploadFiles": {
+                      "press": ".extension.freightordermgt.ext.controller.FoController.uploadfiles",
+                      "visible": true,
+                      "enabled": true,
+                      "text": "Upload Files",
+                      "position": {
+                        "placement": "After",
+                        "anchor": "DataFieldForAction::com.sap.gateway.srvd.zfreightorder_service.v0001.downloadfile::com.sap.gateway.srvd.zfreightorder_service.v0001.ZC_FORDER_ITEMSType"
+                      }
+                    },
+                    "showpdf": {
+                      "press": ".extension.freightordermgt.ext.controller.FoController.showPdf",
+                      "visible": true,
+                      "enabled": true,
+                      "text": "Show PDF",
+                      "position": {
+                        "placement": "After",
+                        "anchor": "UploadFiles"
+                      }
+                    }
+                  }
+                },
+                "body": {
+                  "sections": {
+                    "PdfFragment": {
+                      "template": "freightordermgt.ext.fragment.PdfFragment",
+                      "position": {
+                        "placement": "After",
+                        "anchor": "TranspOrdItem"
+                      },
+                      "title": "AttachmentViewer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "extends": {
+      "extensions": {
+        "sap.ui.controllerExtensions": {
+          "sap.fe.templates.ObjectPage.ObjectPageController#freightordermgt::ZC_FORDER_ITEMSObjectPage": {
+            "controllerName": "freightordermgt.ext.controller.FoController"
+          }
+        }
+      }
+    }
+  },
+  "sap.fiori": {
+    "registrationIds": [],
+    "archeType": "transactional"
+  }
+}
